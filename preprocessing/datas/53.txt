@@ -1,0 +1,12 @@
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=144&aid=0000590812&date=20190110&type=1&rankingSectionId=103&rankingSeq=2
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=144&aid=0000592019&date=20190118&type=1&rankingSectionId=103&rankingSeq=1
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=144&aid=0000592019&date=20190118&type=1&rankingSectionId=003&rankingSeq=1
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=144&aid=0000593576&date=20190129&type=1&rankingSectionId=105&rankingSeq=3
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000590161&date=20190106&type=1&rankingSectionId=101&rankingSeq=19
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000592186&date=20190120&type=1&rankingSectionId=101&rankingSeq=9
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000597037&date=20190224&type=1&rankingSectionId=101&rankingSeq=10
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000598143&date=20190303&type=1&rankingSectionId=101&rankingSeq=24
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000605529&date=20190414&type=1&rankingSectionId=101&rankingSeq=29
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000606933&date=20190421&type=1&rankingSectionId=101&rankingSeq=4
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000650146&date=20200104&type=1&rankingSectionId=101&rankingSeq=22
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=144&aid=0000650152&date=20200105&type=1&rankingSectionId=101&rankingSeq=22

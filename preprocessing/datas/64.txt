@@ -1,0 +1,4 @@
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049612&date=20190203&type=1&rankingSectionId=101&rankingSeq=8
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049612&date=20190204&type=1&rankingSectionId=101&rankingSeq=26
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049977&date=20190319&type=1&rankingSectionId=101&rankingSeq=23
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000050170&date=20190423&type=1&rankingSectionId=101&rankingSeq=1
