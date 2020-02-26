@@ -1,6 +1,6 @@
 from typing import Dict
 from tqdm import tqdm
-from preprocessing.utils import read_txt, save_txt
+from utils import read_txt, save_txt
 import os
 def extract_n(_news):
     """

@@ -2,7 +2,7 @@ import pymysql.cursors
 import time
 from openpyxl import load_workbook, Workbook
 import os
-import DB.CONFIG as config
+import CONFIG as config
 
 def save_excel(_FILENAME, _DATA, _HEADER):
     if os.path.exists(_FILENAME): # 덮어씌우기
