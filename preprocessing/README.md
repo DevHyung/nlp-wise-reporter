@@ -16,7 +16,8 @@ WiseReporter 전처리 부분 관련 코드
 ```python 
 global 규칙     
     #0. 띄어쓰기 태그들 정리
-    <br><br> -> \n[SEP] || 신문사 하나가 <br> <br>태그를 쓰기도함 
+    # '<br><br>'.replace -> \n[SEP]  
+    # 신문사 하나가 <br> <br>태그를 쓰기도함 
 
     #1. 기사외 광고, href, bold(맨 위 광고글, 인용문), td(동영상, 사진설명태그) 등 제거 
     removeTags = ['script', 'span', 'a', 'strong', 'td', 'b']
