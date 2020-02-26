@@ -64,11 +64,9 @@ if __name__ == "__main__":
                      reverse=True) # Cnt 내림차순으로 정렬
 
     # Save
-    '|왼쪽정렬|중앙정렬|'
     for idx, (k, v) in tqdm(enumerate(sortedNewsList)):
-        #print("{} : {}, {}".format(idx,v, k))# 전체 뉴스가 -> 몇개씩 기사를 가지고있는지
-        print("|{}|{}|{}|".format(idx, k, v))  # 전체 뉴스가 -> 몇개씩 기사를 가지고있는지
-
-        #save_txt(BASE_DIR + "{}.txt".format(idx), extract_n(k))
+        #print("{} : {}, {}".format(idx,v, k)) # 전체 뉴스가 -> 몇개씩 기사를 가지고있는지
+        #print("|{}|{}|{}|".format(idx, k, v)) # for README
+        save_txt(BASE_DIR + "{}.txt".format(idx), extract_n(k))
 
 
