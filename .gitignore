@@ -1,0 +1,8 @@
+# IDE 
+.idea/
+
+# ETC
+DEBUG.py
+CONFIG.txt
+*.xlsx
+
