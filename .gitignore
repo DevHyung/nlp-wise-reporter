@@ -4,7 +4,7 @@ __pycache__/
 
 # ETC
 DEBUG.py
-CONFIG.txt
+CONFIG.*
 *.xlsx
 html.txt
 
