@@ -1,8 +1,10 @@
 # IDE 
 .idea/
+__pycache__/
 
 # ETC
 DEBUG.py
 CONFIG.txt
 *.xlsx
+html.txt
 
