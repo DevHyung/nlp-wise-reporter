@@ -1,2 +1,2 @@
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=607&aid=0000000189&date=20190320&type=1&rankingSectionId=102&rankingSeq=3
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=607&aid=0000000189&date=20190320&type=1&rankingSectionId=003&rankingSeq=2
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=607&aid=0000000189&date=20190320&type=1&rankingSectionId=102&rankingSeq=3@@@https://newstapa.org/44093
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=607&aid=0000000189&date=20190320&type=1&rankingSectionId=003&rankingSeq=2@@@https://newstapa.org/44093

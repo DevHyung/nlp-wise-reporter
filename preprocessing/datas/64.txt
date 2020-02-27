@@ -1,4 +1,4 @@
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049612&date=20190203&type=1&rankingSectionId=101&rankingSeq=8
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049612&date=20190204&type=1&rankingSectionId=101&rankingSeq=26
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049977&date=20190319&type=1&rankingSectionId=101&rankingSeq=23
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000050170&date=20190423&type=1&rankingSectionId=101&rankingSeq=1
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049612&date=20190203&type=1&rankingSectionId=101&rankingSeq=8@@@http://magazine.hankyung.com/business/apps/news?popup=0&nid=01&c1=1002&nkey=2019012801209000191&mode=sub_view
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049612&date=20190204&type=1&rankingSectionId=101&rankingSeq=26@@@http://magazine.hankyung.com/business/apps/news?popup=0&nid=01&c1=1002&nkey=2019012801209000191&mode=sub_view
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000049977&date=20190319&type=1&rankingSectionId=101&rankingSeq=23@@@http://magazine.hankyung.com/business/apps/news?popup=0&nid=01&c1=1002&nkey=2019031801216000091&mode=sub_view
+https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=050&aid=0000050170&date=20190423&type=1&rankingSectionId=101&rankingSeq=1@@@http://magazine.hankyung.com/business/apps/news?popup=0&nid=01&c1=1001&nkey=2019042201221000271&mode=sub_view

@@ -6,13 +6,13 @@ def extract_n(_news):
     """
 
     :param _news: 신문사 도메인
-    :return: 신문사 도메인에 해당하는 Naver UrlList
+    :return: 신문사 도메인에 해당하는 Naver UrlList @@@ Origin UrlList
     """
 
     urlList = []
     for i, url in enumerate(originUrl):
         if _news in url:
-            urlList.append(naverUrl[i])
+            urlList.append("{}@@@{}".format(naverUrl[i],url))
     return urlList
 
 if __name__ == "__main__":

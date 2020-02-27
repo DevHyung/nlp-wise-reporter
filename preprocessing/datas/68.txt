@@ -1,2 +1,2 @@
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=037&aid=0000026213&date=20190128&type=1&rankingSectionId=102&rankingSeq=3
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=037&aid=0000026378&date=20190327&type=1&rankingSectionId=104&rankingSeq=4
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=037&aid=0000026213&date=20190128&type=1&rankingSectionId=102&rankingSeq=3@@@http://weekly.donga.com/3/all/11/1620777/1
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=037&aid=0000026378&date=20190327&type=1&rankingSectionId=104&rankingSeq=4@@@http://weekly.donga.com/3/all/11/1677698/1

@@ -1,2 +1,2 @@
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=009&aid=0004387665&date=20190708&type=1&rankingSectionId=102&rankingSeq=3
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=009&aid=0004387665&date=20190708&type=1&rankingSectionId=003&rankingSeq=2
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=009&aid=0004387665&date=20190708&type=1&rankingSectionId=102&rankingSeq=3@@@http://star.mk.co.kr/new/view.php?mc=ST&year=2019&no=496741
+https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=009&aid=0004387665&date=20190708&type=1&rankingSectionId=003&rankingSeq=2@@@http://star.mk.co.kr/new/view.php?mc=ST&year=2019&no=496741
