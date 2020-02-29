@@ -695,35 +695,474 @@ class Khan(BaseParser):
         return 1
 
 
+class Hankookilbo(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 22
+
+    def parsing(self, _article: Article):
+        # 한국일보
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Fnnews(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 23
+
+    def parsing(self, _article: Article):
+        # 파이낸셜 뉴스
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Wowty(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 24
+
+    def parsing(self, _article: Article):
+        # wow TV
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Donga(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 25
+
+    def parsing(self, _article: Article):
+        # 동아일보
+        # 태그는 없지만 대부분이 동영상 뉴스같음
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Nocutnews(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 26
+
+    def parsing(self, _article: Article):
+        # 노컷뉴스
+        # 태그는 없지만 대부분이 동영상 뉴스같음
+        # [CBS노컷뉴스 ] 가 맨앞에 뜬다
+        # [강원영동CBS ] 이렇게 뜨기도 하네
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        tmpLines = []
+        for line in result.split('[SEP]'):
+            line = line.strip()
+            if line != '':
+                tmpLines.append(line)
+        tmpLines[0] = re.sub(r"\[.*?\]", '', tmpLines[0])
+        result = "[SEP]".join(tmpLines)
+
+        _article.set_result(result)
+        return 1
+
+
+class NewsDonga(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 27
+
+    def parsing(self, _article: Article):
+        # 동아일보
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class NewsHankyung(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 28
+
+    def parsing(self, _article: Article):
+        # 한국경제
+        #[ 김예랑 기자  ]
+        # ( ) 시작하기도함 -> 이건 특수경우라 안빼기로
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        tmpLines = []
+        for line in result.split('[SEP]'):
+            line = line.strip()
+            if line != '':
+                tmpLines.append(line)
+        tmpLines[0] = re.sub(r"\[.*?\]", '', tmpLines[0])
+        result = "[SEP]".join(tmpLines)
+
+        _article.set_result(result)
+        return 1
+
+
+class Heraldcorp(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 29
+
+    def parsing(self, _article: Article):
+        # 해럴드경제
+        # [헤럴드경제=] 가 뜨네 맨윗줄에
+
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        tmpLines = []
+        for line in result.split('[SEP]'):
+            line = line.strip()
+            if line != '':
+                tmpLines.append(line)
+        tmpLines[0] = re.sub(r"\[.*?\]", '', tmpLines[0])
+        result = "[SEP]".join(tmpLines)
+
+        _article.set_result(result)
+        return 1
+
+class Yonhap(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 30
+
+    def parsing(self, _article: Article):
+        # 연합뉴스
+        # 동영상 뉴스
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Cnbcsbs(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 31
+
+    def parsing(self, _article: Article):
+        # SBS
+        # 동영상 뉴스
+
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Ichannela(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 32
+
+    def parsing(self, _article: Article):
+        # 채널 A
+        # 동영상 뉴스
+
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Moneys(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 33
+
+    def parsing(self, _article: Article):
+        # 머니S
+
+
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Ohmynews(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 34
+
+    def parsing(self, _article: Article):
+        # 오마이뉴스
+        # 맨윗줄의 [오마이뉴스 ] 가 뜬다
+        # 너무 잡다한 글들이 많음... 대체로 길긴한데 편집자글, 관련기사들이 많음
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        result = Remove_CASE4(result,_pattern=r"\[.*?\]", _idx=0)
+
+        _article.set_result(result)
+        return 1
+
+
+class Dt(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 35
+
+    def parsing(self, _article: Article):
+        # 디지털타임즈
+        # 맨위 [디지털타임스 ] 나옴
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        result = Remove_CASE0(result, _pattern=r"(\[디지털타임스\s+\])")
+
+
+        _article.set_result(result)
+        return 1
+
+
+class Tvchosun(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 36
+
+    def parsing(self, _article: Article):
+        # TV 조선
+        # 동영상 뉴스
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Etnews(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 37
+
+    def parsing(self, _article: Article):
+        # et News 전자신문
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
+class Zdnet(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 38
+
+    def parsing(self, _article: Article):
+        # ZDnet
+        # 2번째 줄에 (지디넷코리아=) 가 남음
+        # ZD 특으로 맨윗줄이 정말 짧은 요약문
+        # 아래론 중간정도 요약문
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        result = Remove_CASE4(result, _pattern=r"\(.*?\)", _idx=0)
+        result = Remove_CASE4(result, _pattern=r"\(.*?\)", _idx=1)
+
+        _article.set_result(result)
+        return 1
+
+class Inews24(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 39
+
+    def parsing(self, _article: Article):
+        # Inews 24
+        # [아이뉴스24 ] 가 맨윗줄에 있네
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+        result = Remove_CASE0(result, _pattern=r"(\[아이뉴스24\s+\])")
+
+
+        _article.set_result(result)
+        return 1
+
+
+class Dailian(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 40
+
+    def parsing(self, _article: Article):
+        # Dailian
+        # 맨 아랫줄 (주)데일리안 - 무단전재, 변형, 무단배포 금지
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        tmpLines = []
+        for line in result.split('[SEP]'):
+            line = line.strip()
+            if line != '':
+                tmpLines.append(line)
+        if '(주)데일리안' in tmpLines[-1]:
+            tmpLines = tmpLines[:-1]
+        result = "[SEP]".join(tmpLines)
+
+
+        _article.set_result(result)
+        return 1
+
+
+class Mbn(BaseParser):
+    def __init__(self, _domain=''):
+        super().__init__(_domain)
+        self.idx = 41
+
+    def parsing(self, _article: Article):
+        # mbn
+        # 동영상 뉴스
+        if super().general_parsing(_article): pass
+        else: return -1
+        base_result = _article.get_result()
+        result = super().post_edit(base_result)
+        # 추가
+
+        _article.set_result(result)
+        return 1
+
+
 def make_parser(_originUrl) -> Article:
     news = _originUrl.split('/')[2].strip()
     parser = None
-    if news == 'news.joins.com':        parser = NewsJoins(news)
-    elif news == 'yna.kr':              parser = Yna(news)
-    elif news == 'www.hankyung.com':    parser = HanKyung(news)
-    elif news == 'news.mt.co.kr':       parser = Mt(news)
-    elif news == 'news.kmib.co.kr':     parser = Kmib(news)
-    elif news == 'news.mk.co.kr':       parser = Mk(news)  # 5
-    elif news == 'news.sbs.co.kr':      parser = Sbs(news)
-    elif news == 'news1.kr':            parser = News1(news)
-    elif news == 'news.jtbc.joins.com': parser = Jtbc(news)
-    elif news == 'news.chosun.com':     parser = Chosun(news)
-    elif news == 'news.kbs.co.kr':      parser = Kbs(news)  # 10
-    elif news == 'www.edaily.co.kr':    parser = Edaily(news)
-    elif news == 'view.asiae.co.kr':    parser = Asiae(news)
-    elif news == 'www.ytn.co.kr':       parser = Ytn(news)
-    elif news == 'biz.chosun.com':      parser = BizChosun(news)
-    elif news == 'www.newsis.com':      parser = Newsis(news)  # 15
-    elif news == 'www.sedaily.com':     parser = Sedaily(news)
-    elif news == 'www.hani.co.kr':      parser = Hani(news)
-    elif news == 'www.segye.com':       parser = Segye(news)
-    elif news == 'www.seoul.co.kr':     parser = Seoul(news)
-    elif news == 'imnews.imbc.com':     parser = Imbc(news) # 20
-    elif news == 'news.khan.co.kr':     parser = Khan(news)
+    if news == 'news.joins.com':            parser = NewsJoins(news)
+    elif news == 'yna.kr':                  parser = Yna(news)
+    elif news == 'www.hankyung.com':        parser = HanKyung(news)
+    elif news == 'news.mt.co.kr':           parser = Mt(news)
+    elif news == 'news.kmib.co.kr':         parser = Kmib(news)
+    elif news == 'news.mk.co.kr':           parser = Mk(news)  # 5
+    elif news == 'news.sbs.co.kr':          parser = Sbs(news)
+    elif news == 'news1.kr':                parser = News1(news)
+    elif news == 'news.jtbc.joins.com':     parser = Jtbc(news)
+    elif news == 'news.chosun.com':         parser = Chosun(news)
+    elif news == 'news.kbs.co.kr':          parser = Kbs(news)  # 10
+    elif news == 'www.edaily.co.kr':        parser = Edaily(news)
+    elif news == 'view.asiae.co.kr':        parser = Asiae(news)
+    elif news == 'www.ytn.co.kr':           parser = Ytn(news)
+    elif news == 'biz.chosun.com':          parser = BizChosun(news)
+    elif news == 'www.newsis.com':          parser = Newsis(news)  # 15
+    elif news == 'www.sedaily.com':         parser = Sedaily(news)
+    elif news == 'www.hani.co.kr':          parser = Hani(news)
+    elif news == 'www.segye.com':           parser = Segye(news)
+    elif news == 'www.seoul.co.kr':         parser = Seoul(news)
+    elif news == 'imnews.imbc.com':         parser = Imbc(news) # 20
+    elif news == 'news.khan.co.kr':         parser = Khan(news)
+    elif news == 'www.hankookilbo.com':     parser = Hankookilbo(news)
+    elif news == 'www.fnnews.com':          parser = Fnnews(news)
+    elif news == 'news.wowtv.co.kr':        parser = Wowty(news)
+    elif news == 'www.donga.com':           parser = Donga(news)# 25
+    elif news == 'www.nocutnews.co.kr':     parser = Nocutnews(news)
+    elif news == 'news.donga.com':          parser = NewsDonga(news)
+    elif news == 'news.hankyung.com':       parser = NewsHankyung(news)
+    elif news == 'news.heraldcorp.com':     parser = Heraldcorp(news)
+    elif news == 'www.yonhapnewstv.co.kr':  parser = Yonhap(news)# 30
+    elif news == 'cnbc.sbs.co.kr':          parser = Cnbcsbs(news)
+    elif news == 'www.ichannela.com':       parser = Ichannela(news)
+    elif news == 'moneys.mt.co.kr':         parser = Moneys(news)
+    elif news == 'www.ohmynews.com':        parser = Ohmynews(news)
+    elif news == 'www.dt.co.kr':            parser = Dt(news)# 35
+    elif news == 'news.tvchosun.com':       parser = Tvchosun(news)
+    elif news == 'www.etnews.com':          parser = Etnews(news)
+    elif news == 'www.zdnet.co.kr':         parser = Zdnet(news)
+    elif news == 'www.inews24.com':         parser = Inews24(news)
+    elif news == 'www.dailian.co.kr':       parser = Dailian(news) # 40
+    elif news == 'www.mbn.co.kr':           parser = Mbn(news)
+
     log('s', "Loading ... {}".format(parser))
     return parser
 
+def Remove_CASE0(_text, _pattern):
+    """ 원하는 패턴 입력받아 지워줌 """
+    return re.sub(_pattern, '', _text)
 
+def Remove_CASE4(_text, _pattern, _idx):
+    """
+    [....] 패턴 지워주는 function
+    :param _text: 전체 기사 text
+    :param _idx:  패턴 출현하는 index
+    :return:  패턴 지워진 기사 text
+    """
+    tmpLines = []
+    for line in _text.split('[SEP]'):
+        line = line.strip()
+        if line != '':
+            tmpLines.append(line)
+    tmpLines[_idx] = re.sub(_pattern, '', tmpLines[_idx])
+    return "[SEP]".join(tmpLines)
 def load_url_by_file(_fileNum) -> List[Tuple[str, str]]:
     """
     File로 부터 신문사들 URL가져옮
