@@ -10,25 +10,31 @@ WiseReporter 전처리 부분 관련 코드
 │  │      origin.txt        # 각 뉴스사마다 원본 뉴스 URL
 │  │      naver.txt         # naver 에서 보여주는 origin News URL 
 │  │      url_clustering.py # News 회사별로 나눠주는 script 
+│  │      utils.py          # Util modules  
+│  │      parser_class.py   # 기본 Parser class 상속으로 대략 42개별 파생 parser 있음
+│  │      parsing.py        # Parsing하는 Main script
 │  │      README.md         # 전처리쪽 설명 md 파일   
 ```
-## 1.2 전처리 내역(작성중) :warning:
+## 1.2 전처리 내역 (:date: 200301 작성)
 ```python 
-global 규칙     
-    #0. 띄어쓰기 태그들 정리
-    # '<br><br>'.replace -> \n[SEP]  
-    # 신문사 하나가 <br> <br>태그를 쓰기도함 
-
-    #1. 기사외 광고, href, bold(맨 위 광고글, 인용문), td(동영상, 사진설명태그) 등 제거 
+if global:
+    # CASE1. 문장간 띄어쓰기를 <br><br>로 보통쓰길래 \n+[SEP] 으로 바꿔줌
+    # CASE2. 본문외 불필요 tag들 decompose
     removeTags = ['script', 'span', 'a', 'strong', 'td', 'b']
-    
-    #2. 정규표현식으로 ( []@[].[] 패턴이메일제거, [...] [기자] 패턴제거, 특수문자 제거 순서로 regex sub
+    # CASE3. 이메일, '재배포 금지'라는 Pattern 이 들어가있는 Line 제거
     removePattern = [r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)",
-                     r"(\w+\s*기자)",
-                     r'[@#※ㆍ!』…》▶ⓒ◆◇▲©○]',]
+                     r"(\w+\s*기자)"]
+    # 추가적으로 한줄 length 정해야함
+    THRESHOLD = 7 
 
 if 신문사별:
-    continue
+    # CASE0. 전체 TEXT에서 원하는 pattern 지우기 
+    result = Remove_CASE0(result, _pattern=r"(\(서울=연합뉴스\)\s*=)")
+    
+    # CASE4. 원하는 Line index에서 원하는 pattern 지우기
+    result = Remove_CASE4(result, _pattern=r"\[.*?\]", _idx=0)
+else:
+    # 좀 더 신문사별 상세한 내용은 주석으로 달아놨음
 ```
 
 ## 1.3 `datas/` 폴더 News Index 설명
