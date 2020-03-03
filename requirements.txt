@@ -1,1 +1,6 @@
 tqdm
+pymysql
+openpyxl
+bs4
+requests
+lxml
