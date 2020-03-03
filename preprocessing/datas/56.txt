@@ -1,8 +1,0 @@
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=123&aid=0002197954&date=20190109&type=1&rankingSectionId=101&rankingSeq=8@@@http://www.joseilbo.com/news/news_read.php?uid=368079&class=7&grp=
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=123&aid=0002198078&date=20190111&type=1&rankingSectionId=101&rankingSeq=15@@@http://www.joseilbo.com/news/news_read.php?uid=368211&class=7&grp=
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=123&aid=0002198271&date=20190115&type=1&rankingSectionId=101&rankingSeq=14@@@http://www.joseilbo.com/news/news_read.php?uid=368443&class=7&grp=
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=123&aid=0002198746&date=20190122&type=1&rankingSectionId=101&rankingSeq=29@@@http://www.joseilbo.com/news/news_read.php?uid=368997&class=17&grp=
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=123&aid=0002203307&date=20190410&type=1&rankingSectionId=003&rankingSeq=3@@@http://www.joseilbo.com/news/news_read.php?uid=374239&class=7&grp=
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=123&aid=0002203307&date=20190410&type=1&rankingSectionId=101&rankingSeq=1@@@http://www.joseilbo.com/news/news_read.php?uid=374239&class=7&grp=
-https://news.naver.com/main/ranking/read.nhn?rankingType=popular_day&oid=123&aid=0002203307&date=20190411&type=1&rankingSectionId=101&rankingSeq=2@@@http://www.joseilbo.com/news/news_read.php?uid=374239&class=7&grp=
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=123&aid=0002205775&date=20190521&type=1&rankingSectionId=100&rankingSeq=1@@@http://www.joseilbo.com/news/news_read.php?uid=377028&class=32&grp=

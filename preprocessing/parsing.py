@@ -41,6 +41,7 @@ def load_excel(_fileName):
     wb = load_workbook(filename=_fileName)
     sheet = wb.active
     isFirst = True
+    datas = []
     for i in sheet.rows:
         if isFirst: # 첫줄 제거
             isFirst = False
@@ -56,9 +57,15 @@ def load_excel(_fileName):
         if originalUrl == None or originalHTML == None:# 하나라도 없으면
             break
         else:
-            yield database(firstDate, finalDate, naverUrl, originalUrl,
-                           originalTitle, category, crawlDate, originalHTML)
+            # For Generator version : 속도는 빠르긴한데 언제끝나는지 예측이안됨
+            # yield database(firstDate, finalDate, naverUrl, originalUrl,
+            #               originalTitle, category, crawlDate, originalHTML)
 
+            datas.append(database(firstDate, finalDate, naverUrl, originalUrl,
+                           originalTitle, category, crawlDate, originalHTML)
+                         )# For List version
+
+    return  datas # For List version
 
 def post_processing(_text):
     """
@@ -146,6 +153,7 @@ if __name__ == "__main__":
 
     # Excel Load
     datas: database = load_excel(args.input_excel)
+
     # Preprocess
     for data in tqdm(datas):
         # Parser class instance

@@ -1,4 +1,0 @@
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=468&aid=0000530165&date=20190705&type=1&rankingSectionId=105&rankingSeq=1@@@http://www.sportsseoul.com/news/read/786296
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=468&aid=0000530165&date=20190706&type=1&rankingSectionId=105&rankingSeq=1@@@http://www.sportsseoul.com/news/read/786296
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=468&aid=0000552291&date=20190823&type=1&rankingSectionId=102&rankingSeq=2@@@http://www.sportsseoul.com/news/read/808888
-https://news.naver.com/main/ranking/read.nhn?mid=etc&sid1=111&rankingType=popular_day&oid=468&aid=0000552291&date=20190823&type=1&rankingSectionId=003&rankingSeq=3@@@http://www.sportsseoul.com/news/read/808888
