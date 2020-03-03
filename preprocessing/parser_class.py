@@ -23,7 +23,7 @@ REMOVE_PATTERN = [r"([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)",
 
 class Article:
     """ 뉴스기사 Class """
-    def __init__(self, _urlTuple, _html=''):
+    def __init__(self, _urlTuple=('', ''), _html=''):
         """
         HTML 코드가 있으면 그대로 쓰고
         없으면 url tuple 가지고 HTML 코드 get
@@ -103,21 +103,28 @@ class BaseParser:
         # Conver HTML -> BS4 Object
         bs = BeautifulSoup(_article.get_html(), 'lxml')
 
-        # Article area 부분 catch
-        content = bs.find('div', id='main_content')
-
-        # Head title ( div > h3 )
-        head = content.find('div', class_='article_header')
+        # [20.03.03] : DB에서 날라온 데이터는 이미 타이틀, 본문부분만 있기에 아랫부분이 필요가 없다
         try:
-            title = head.find('h3', id='articleTitle').text.strip()
-            _article.set_title(title)
-        except:  # 이경우에 들어오는건 기사가 삭제되었다는거
-            log('e', "삭제된기사 : {}".format(_article.get_url()))
-            _article.set_isRemove(True)
-            return -1
+            # Article area 부분 catch
+            content = bs.find('div', id='main_content')
 
-        # Body
-        body = content.find('div', id='articleBodyContents')
+
+            # Head title ( div > h3 )
+            head = content.find('div', class_='article_header')
+            try:
+                title = head.find('h3', id='articleTitle').text.strip()
+                _article.set_title(title)
+            except:  # 이경우에 들어오는건 기사가 삭제되었다는거
+                log('e', "삭제된기사 : {}".format(_article.get_url()))
+                _article.set_isRemove(True)
+                return -1
+
+            # Body
+            body = content.find('div', id='articleBodyContents')
+        except: #이부분이 에러난다는건 DB Pull data
+            body = bs
+
+
 
         # CASE1. 문장간 띄어쓰기를 <br><br>로 보통쓰길래 \n+[SEP] 으로 바꿔줌
         """ CASE1 START"""
@@ -970,7 +977,7 @@ def make_parser(_originUrl) -> Article:
     elif news == 'www.dailian.co.kr':       parser = Dailian(news) # 40
     elif news == 'www.mbn.co.kr':           parser = Mbn(news)
 
-    log('s', "Loading ... {}".format(parser))
+    #log('s', "Loading ... {}".format(parser))# For debug
     return parser
 
 
