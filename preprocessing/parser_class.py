@@ -976,7 +976,6 @@ def make_parser(_originUrl) -> Article:
     elif news == 'www.inews24.com':         parser = Inews24(news)
     elif news == 'www.dailian.co.kr':       parser = Dailian(news) # 40
     elif news == 'www.mbn.co.kr':           parser = Mbn(news)
-
     #log('s', "Loading ... {}".format(parser))# For debug
     return parser
 
@@ -998,7 +997,10 @@ def Remove_CASE4(_text, _pattern, _idx):
         line = line.strip()
         if line != '':
             tmpLines.append(line)
-    tmpLines[_idx] = re.sub(_pattern, '', tmpLines[_idx])
+    try:
+        tmpLines[_idx] = re.sub(_pattern, '', tmpLines[_idx])
+    except:
+        pass
     return "[SEP]".join(tmpLines)
 
 
