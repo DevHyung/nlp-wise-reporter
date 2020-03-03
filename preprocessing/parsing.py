@@ -66,9 +66,11 @@ def post_processing(_text):
     1. Line min값 적용해서 아닌부분 지우기
     2. 요약문, 본문 나눠줌
         2.1 요약문의 길이 제한을 두자
-    :param _text:
-    :return:
+    3. 요약문에 동영상 뉴스가 포함되어있는지 본다
+    :return: 뉴스타입, 요약문, 본문
     """
+    type ='news' # news, video
+
     # 1. Line min 값 해서 이상인 부분만 추출하기
     lines = []
     for line in _text.strip().replace('\n', '').split('[SEP]'):
@@ -88,7 +90,11 @@ def post_processing(_text):
         charCnt += len(sentence)
     summary = '\n'.join(lines[:summaryIdx])
     content = '\n'.join(lines[summaryIdx:])
-    return summary, content
+
+    # 3. 동영상뉴스파악
+    if '동영상 뉴스' in summary:
+        type = 'video'
+    return type, summary, content
 
 
 def init_dict():
@@ -96,11 +102,12 @@ def init_dict():
     return {
             'input_excel' : args.input_excel,
             'total_cnt' : '',
+            'remove_cnt': 0,
             'datas' : []
             }
 
 
-def make_article_dict(_data: database, _summary, _content):
+def make_article_dict(_data: database, type, _summary, _content):
     """
 
     :param _data: 엑셀 한줄 database object
@@ -113,7 +120,8 @@ def make_article_dict(_data: database, _summary, _content):
     except: resultDict['firstDate'] = ''
     try:    resultDict['finalDate'] = _data.finalDate.strftime("%Y-%m-%d %H:%M:%S")
     except: resultDict['finalDate'] = ''
-    resultDict['crawlDate'] = _data.crawlDate
+    resultDict['type'] = type
+    resultDict['crawlDate'] = str(_data.crawlDate)
     resultDict['naverUrl'] = _data.naverUrl
     resultDict['originalUrl'] = _data.originalUrl
     resultDict['category'] = _data.category
@@ -148,13 +156,12 @@ if __name__ == "__main__":
         # Parsing
         if parser is not None:
             isComplete = parser.parsing(article)
-
             if isComplete:
-                log('s', "GET - {}".format(data.naverUrl))
-                summary, content = post_processing(article.get_result())
-                resultDict['datas'].append(make_article_dict(data, summary, content))
+                type, summary, content = post_processing(article.get_result())
+                resultDict['datas'].append(make_article_dict(data, type, summary, content))
+                if len(summary) == 0: resultDict['remove_cnt'] += 1
             else:
-                print('gd')
+                log('e', 'parsing error')
     resultDict['total_cnt'] = len(resultDict['datas'])
 
     # Save
