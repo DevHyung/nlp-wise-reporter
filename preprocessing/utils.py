@@ -3,6 +3,7 @@ def log(_option, _msg):
     elif _option.lower() == 's': print("[Success] : {}".format(_msg))
     elif _option.lower() == 'i': print("[Info]    : {}".format(_msg))
 
+
 def read_txt(_fileName):
     """
 
@@ -15,6 +16,7 @@ def read_txt(_fileName):
             line = line.strip()
             if line != '': data.append(line)
     return data
+
 
 def save_txt(_fileName, _data):
     """
