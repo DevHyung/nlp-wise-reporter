@@ -16,21 +16,17 @@ Wise-Report 진행하면서 썼던 Module + Code 저장 repository
 │  │      CONFIG.py         # Private file (DB connection info)
 │  │    
 │  ├─ preprocessing
-│  │      datas/            # {}.txt 로 각 회사별로 URL들이 저장되어있는 폴더 
-│  │      origin.txt        # 각 뉴스사마다 원본 뉴스 URL
-│  │      naver.txt         # naver 에서 보여주는 origin News URL 
-│  │      url_clustering.py # News 회사별로 나눠주는 script 
-│  │      README.md         # 전처리쪽 설명 md 파일
-│  │     
-│  │  Summary 코드 추가 예정  
+│  │      parser_class.py   # 기본 Parser class 상속으로 대략 42개별 파생 parser 있음
+│  │      parsing.py        # Parsing하는 Main script
+│  │      parsing.sh        # 실행 쉘 스크립트 
+│  │      url_clustering.py # News 회사별로 나눠주는 script  
+│  │      utils.py          # Util modules
+│  │      sample.xlsx       # 샘플 Input   
+│  │      sample_result.json# 샘플 Output    
+│  │      README.md         # 전처리쪽 설명 md 파일  
 ```
 
 ## 1.2 Requirement
 ```bash 
-if USE_PREPROCESS:
 $ pip install -r requirements.txt 
-
-if USE_DB:
-$ cd DB
-$ pip install -r requirements.txt
 ```
