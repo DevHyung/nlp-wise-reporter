@@ -1,4 +1,4 @@
-from preprocessing.utils import read_txt, log
+from utils import read_txt, log
 from typing import List, Tuple
 from bs4 import BeautifulSoup
 import re
